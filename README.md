@@ -1,6 +1,18 @@
 # 2016 Subaru WRX CAN BUS Ids
 CAN BUS ids sniffed from a 2016 Subaru WRX
 
+- [Introduction](#introduction)
+- [CAN IDs and Data](#can-ids-and-data)
+  - [0x152](can-id-0x152)
+  - [0x140](can-id-0x140)
+  - [0x0D1](can-id-0x0d1)
+  - [0x375](can-id-0x375)
+  - [0x002](can-id-0x002)
+  - [0x0D0](can-id-0x0d0)
+  - [0x281](can-id-0x281)
+- [Tools](#tools)
+- [Resources/References](#resourcesreferences)
+
 ## Introduction
 
 The following outlines CAN BUS ids and data I've discovered while sniffing the (high speed, 500KB/s) CAN BUS on my 2016 Subaru WRX.
