@@ -10,6 +10,7 @@ CAN BUS ids sniffed from a 2016 Subaru WRX
   - [0x002](can-id-0x002)
   - [0x0D0](can-id-0x0d0)
   - [0x281](can-id-0x281)
+- [Logs](#logs)
 - [Tools](#tools)
 - [Resources/References](#resourcesreferences)
 
@@ -165,6 +166,18 @@ Climate control temperature is represented by the last 4 bits of the third byte,
 - `00111000`
 - ...
 - `10110000`
+
+## Logs
+
+The following are some log files I obtained using `candump` with certain events. It's helpful to run these through `canplayer` on a virtual device. These were done with the ignition on but without the car running (unless otherwise specified)
+
+- [logs/brake-pedal.log](logs/brake-pedal.log)
+- [logs/gas-pedal.log](logs/gas-pedal.log)
+- [logs/doors-open-close.log](logs/doors-open-close.log)
+- [logs/steering-wheel.log](logs/steering-wheel.log)
+- [logs/accessory-to-ignition.log](logs/accessory-to-ignition.log) - Going from accessory mode to ignition on (engine still off)
+- [logs/car-running-idle.log](logs/car-running-idle.log) - From ignition on to turning engine on, idling
+- [logs/driving.log](logs/driving.log) - A log from a short drive (5 minutes?)
 
 ## Tools
 
