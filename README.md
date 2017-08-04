@@ -6,6 +6,7 @@ CAN BUS ids sniffed from a 2016 Subaru WRX
   - [0x152](#can-id-0x152)
   - [0x140](#can-id-0x140)
   - [0x0D1](#can-id-0x0d1)
+  - [0x0D4](#can-id-0x0d4)
   - [0x375](#can-id-0x375)
   - [0x002](#can-id-0x002)
   - [0x0D0](#can-id-0x0d0)
@@ -83,6 +84,33 @@ Brake pedal pressure:
 | `0xOD1` | `00` | `00` | `53` | `00` | `00` | `00` | `00` | `00` | Some (full?) pressure |
 
 I wasn't able to observe a value higher than about `0x53` for byte 3 for brake pressure while casually stomping on the pedal.
+
+Vehicle speed:
+
+| ID      | B1   | B2   | B3   | B4   | B5   | B6   | B7   | B8   | Comments               |
+| ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---------------------- |
+| `0x0D1` | `FF` | `FF` | `00` | `00` | `00` | `00` | `00` | `00` | B1 & B2, little endian |
+
+For example, if `B1` and `B2` are `0x0F` and `0x04` respectively:
+
+`
+(4 * 256) + 15 = 1039
+1039 * 0.05625 = ~58 km/h
+`
+
+### CAN ID `0x0D4`
+
+Individual wheel speeds:
+
+| ID      | B1   | B2   | B3   | B4   | B5   | B6   | B7   | B8   | Comments                            |
+| ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----------------------------------- |
+| `0x0D1` | `FF` | `FF` | `00` | `00` | `00` | `00` | `00` | `00` | B1 & B2, little endian, left front  |
+| `0x0D1` | `00` | `00` | `FF` | `FF` | `00` | `00` | `00` | `00` | B3 & B4, little endian, right front |
+| `0x0D1` | `00` | `00` | `00` | `00` | `FF` | `FF` | `00` | `00` | B5 & B6, little endian, left rear   |
+| `0x0D1` | `00` | `00` | `00` | `00` | `00` | `00` | `FF` | `FF` | B7 & B8, little endian, right rear  |
+
+See [0x0D1](#can-id-0x0d1) above for speed calculation.
+
 
 ### CAN ID `0x375`
 
