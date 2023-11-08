@@ -261,7 +261,7 @@ Odometer reading:
 
 | ID      | B1   | B2   | B3   | B4   | B5   | B6   | B7   | B8   | Comments        |
 | ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --------------- |
-| `0x282` | `0D` | `0C` | `0B` | `0A` | -    | -    | -    | -    | Little endian   |
+| `0x6D1` | `0D` | `0C` | `0B` | `0A` | -    | -    | -    | -    | Little endian   |
 
 Calculation per [OBD PID A6 spec](https://en.wikipedia.org/wiki/OBD-II_PIDs)
 
