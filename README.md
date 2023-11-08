@@ -11,6 +11,8 @@ CAN BUS ids sniffed from a 2016 Subaru WRX
   - [0x002](#can-id-0x002)
   - [0x0D0](#can-id-0x0d0)
   - [0x281](#can-id-0x281)
+  - [0x282](#can-id-0x282)
+  - [0x6D1](#can-id-0x6D1)
 - [Logs](#logs)
 - [Tools](#tools)
 - [Resources/References](#resourcesreferences)
@@ -259,10 +261,7 @@ Odometer reading:
 
 | ID      | B1   | B2   | B3   | B4   | B5   | B6   | B7   | B8   | Comments        |
 | ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --------------- |
-| `0x282` | `0D` | -    | -    | -    | -    | -    | -    | -    | Odometer byte D |
-| `0x282` | `0C` | -    | -    | -    | -    | -    | -    | -    | Odometer byte C |
-| `0x282` | `0B` | -    | -    | -    | -    | -    | -    | -    | Odometer byte B |
-| `0x282` | `0r` | -    | -    | -    | -    | -    | -    | -    | Odometer byte A |
+| `0x282` | `0D` | `0C` | `0B` | `0A` | -    | -    | -    | -    | Little endian   |
 
 Calculation per [OBD PID A6 spec](https://en.wikipedia.org/wiki/OBD-II_PIDs)
 
